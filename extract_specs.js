@@ -448,8 +448,7 @@ function generateAISchema(specs) {
         'mj-section': ['mj-column', 'mj-group', 'mj-raw'],
         'mj-group': ['mj-column'],
         'mj-column': ['mj-text', 'mj-button', 'mj-image', 'mj-divider', 'mj-spacer', 'mj-social', 'mj-raw'],
-        'mj-social': ['mj-social-element'],
-        'mj-attributes': ['mj-text', 'mj-button', 'mj-image', 'mj-section', 'mj-column', 'mj-wrapper', 'mj-group', 'mj-divider', 'mj-spacer', 'mj-social', 'mj-social-element']
+        'mj-attributes': ['mj-text', 'mj-button', 'mj-image', 'mj-section', 'mj-column', 'mj-wrapper', 'mj-group', 'mj-divider', 'mj-spacer', 'mj-social']
     };
 
     const basicExample = {

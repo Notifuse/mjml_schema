@@ -140,7 +140,7 @@ This will:
 
 ### Schema Structure
 
-The generated schema follows the same structure as `email-tree-schema.json`:
+The generated schema follows the same structure as `mjml-components-schema-ai.json`:
 
 - Uses `allOf` with conditional schemas for each component type
 - Defines component-specific attributes under `properties.attributes.properties`

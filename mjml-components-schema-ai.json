@@ -67,7 +67,10 @@
       }
     }
   ],
-  "required": ["id", "type"],
+  "required": [
+    "id",
+    "type"
+  ],
   "properties": {
     "id": {
       "type": "string",
@@ -152,7 +155,11 @@
             "items": {
               "properties": {
                 "type": {
-                  "enum": ["mj-wrapper", "mj-section", "mj-raw"]
+                  "enum": [
+                    "mj-wrapper",
+                    "mj-section",
+                    "mj-raw"
+                  ]
                 }
               }
             }
@@ -177,7 +184,11 @@
             "properties": {
               "align": {
                 "type": "string",
-                "enum": ["left", "center", "right"],
+                "enum": [
+                  "left",
+                  "center",
+                  "right"
+                ],
                 "description": "Text/content alignment.",
                 "default": "center"
               },
@@ -314,13 +325,21 @@
               },
               "vertical-align": {
                 "type": "string",
-                "enum": ["top", "bottom", "middle"],
+                "enum": [
+                  "top",
+                  "bottom",
+                  "middle"
+                ],
                 "description": "vertical-align attribute",
                 "default": "middle"
               },
               "text-align": {
                 "type": "string",
-                "enum": ["left", "right", "center"],
+                "enum": [
+                  "left",
+                  "right",
+                  "center"
+                ],
                 "description": "text-align attribute"
               },
               "width": {
@@ -380,7 +399,10 @@
               },
               "direction": {
                 "type": "string",
-                "enum": ["ltr", "rtl"],
+                "enum": [
+                  "ltr",
+                  "rtl"
+                ],
                 "description": "Text/content direction (ltr or rtl).",
                 "default": "ltr"
               },
@@ -406,7 +428,11 @@
               },
               "vertical-align": {
                 "type": "string",
-                "enum": ["top", "bottom", "middle"],
+                "enum": [
+                  "top",
+                  "bottom",
+                  "middle"
+                ],
                 "description": "vertical-align attribute",
                 "default": "top"
               },
@@ -505,7 +531,11 @@
               },
               "align": {
                 "type": "string",
-                "enum": ["left", "center", "right"],
+                "enum": [
+                  "left",
+                  "center",
+                  "right"
+                ],
                 "description": "Text/content alignment.",
                 "default": "center"
               }
@@ -536,13 +566,20 @@
               },
               "direction": {
                 "type": "string",
-                "enum": ["ltr", "rtl"],
+                "enum": [
+                  "ltr",
+                  "rtl"
+                ],
                 "description": "Text/content direction (ltr or rtl).",
                 "default": "ltr"
               },
               "vertical-align": {
                 "type": "string",
-                "enum": ["top", "bottom", "middle"],
+                "enum": [
+                  "top",
+                  "bottom",
+                  "middle"
+                ],
                 "description": "vertical-align attribute"
               },
               "width": {
@@ -558,7 +595,9 @@
             "items": {
               "properties": {
                 "type": {
-                  "enum": ["mj-column"]
+                  "enum": [
+                    "mj-column"
+                  ]
                 }
               }
             }
@@ -620,7 +659,11 @@
               },
               "align": {
                 "type": "string",
-                "enum": ["left", "center", "right"],
+                "enum": [
+                  "left",
+                  "center",
+                  "right"
+                ],
                 "description": "Text/content alignment.",
                 "default": "center"
               },
@@ -656,7 +699,10 @@
               },
               "fluid-on-mobile": {
                 "type": "string",
-                "enum": ["true", "false"],
+                "enum": [
+                  "true",
+                  "false"
+                ],
                 "description": "fluid-on-mobile attribute"
               },
               "padding-bottom": {
@@ -732,7 +778,9 @@
             "properties": {
               "position": {
                 "type": "string",
-                "enum": ["file-start"],
+                "enum": [
+                  "file-start"
+                ],
                 "description": "position attribute"
               }
             }
@@ -767,7 +815,10 @@
               },
               "background-repeat": {
                 "type": "string",
-                "enum": ["repeat", "no-repeat"],
+                "enum": [
+                  "repeat",
+                  "no-repeat"
+                ],
                 "description": "Background repeat (e.g., \"repeat\", \"no-repeat\").",
                 "default": "repeat"
               },
@@ -816,13 +867,20 @@
               },
               "direction": {
                 "type": "string",
-                "enum": ["ltr", "rtl"],
+                "enum": [
+                  "ltr",
+                  "rtl"
+                ],
                 "description": "Text/content direction (ltr or rtl).",
                 "default": "ltr"
               },
               "full-width": {
                 "type": "string",
-                "enum": ["full-width", "false", ""],
+                "enum": [
+                  "full-width",
+                  "false",
+                  ""
+                ],
                 "description": "Width value (e.g., \"100px\", \"50%\", \"auto\")."
               },
               "padding-top": {
@@ -847,7 +905,11 @@
               },
               "text-align": {
                 "type": "string",
-                "enum": ["left", "center", "right"],
+                "enum": [
+                  "left",
+                  "center",
+                  "right"
+                ],
                 "description": "text-align attribute",
                 "default": "center"
               },
@@ -865,7 +927,11 @@
             "items": {
               "properties": {
                 "type": {
-                  "enum": ["mj-column", "mj-group", "mj-raw"]
+                  "enum": [
+                    "mj-column",
+                    "mj-group",
+                    "mj-raw"
+                  ]
                 }
               }
             }
@@ -890,7 +956,11 @@
             "properties": {
               "align": {
                 "type": "string",
-                "enum": ["left", "right", "center"],
+                "enum": [
+                  "left",
+                  "right",
+                  "center"
+                ],
                 "description": "Text/content alignment.",
                 "default": "center"
               },
@@ -955,7 +1025,10 @@
               },
               "mode": {
                 "type": "string",
-                "enum": ["horizontal", "vertical"],
+                "enum": [
+                  "horizontal",
+                  "vertical"
+                ],
                 "description": "mode attribute",
                 "default": "horizontal"
               },
@@ -981,7 +1054,10 @@
               },
               "table-layout": {
                 "type": "string",
-                "enum": ["auto", "fixed"],
+                "enum": [
+                  "auto",
+                  "fixed"
+                ],
                 "description": "table-layout attribute"
               },
               "text-padding": {
@@ -996,19 +1072,12 @@
               },
               "vertical-align": {
                 "type": "string",
-                "enum": ["top", "bottom", "middle"],
+                "enum": [
+                  "top",
+                  "bottom",
+                  "middle"
+                ],
                 "description": "vertical-align attribute"
-              }
-            }
-          },
-          "children": {
-            "type": "array",
-            "description": "Allowed children: mj-social-element",
-            "items": {
-              "properties": {
-                "type": {
-                  "enum": ["mj-social-element"]
-                }
               }
             }
           }
@@ -1103,7 +1172,12 @@
             "properties": {
               "align": {
                 "type": "string",
-                "enum": ["left", "right", "center", "justify"],
+                "enum": [
+                  "left",
+                  "right",
+                  "center",
+                  "justify"
+                ],
                 "description": "Text/content alignment.",
                 "default": "left"
               },
@@ -1189,7 +1263,11 @@
               },
               "vertical-align": {
                 "type": "string",
-                "enum": ["top", "bottom", "middle"],
+                "enum": [
+                  "top",
+                  "bottom",
+                  "middle"
+                ],
                 "description": "vertical-align attribute"
               }
             }
@@ -1224,7 +1302,10 @@
               },
               "background-repeat": {
                 "type": "string",
-                "enum": ["repeat", "no-repeat"],
+                "enum": [
+                  "repeat",
+                  "no-repeat"
+                ],
                 "description": "Background repeat (e.g., \"repeat\", \"no-repeat\").",
                 "default": "repeat"
               },
@@ -1273,13 +1354,20 @@
               },
               "direction": {
                 "type": "string",
-                "enum": ["ltr", "rtl"],
+                "enum": [
+                  "ltr",
+                  "rtl"
+                ],
                 "description": "Text/content direction (ltr or rtl).",
                 "default": "ltr"
               },
               "full-width": {
                 "type": "string",
-                "enum": ["full-width", "false", ""],
+                "enum": [
+                  "full-width",
+                  "false",
+                  ""
+                ],
                 "description": "Width value (e.g., \"100px\", \"50%\", \"auto\")."
               },
               "padding-top": {
@@ -1304,7 +1392,11 @@
               },
               "text-align": {
                 "type": "string",
-                "enum": ["left", "center", "right"],
+                "enum": [
+                  "left",
+                  "center",
+                  "right"
+                ],
                 "description": "text-align attribute",
                 "default": "center"
               },
@@ -1322,7 +1414,10 @@
             "items": {
               "properties": {
                 "type": {
-                  "enum": ["mj-section", "mj-raw"]
+                  "enum": [
+                    "mj-section",
+                    "mj-raw"
+                  ]
                 }
               }
             }
@@ -1387,7 +1482,7 @@
           },
           "children": {
             "type": "array",
-            "description": "Allowed children: mj-text, mj-button, mj-image, mj-section, mj-column, mj-wrapper, mj-group, mj-divider, mj-spacer, mj-social, mj-social-element",
+            "description": "Allowed children: mj-text, mj-button, mj-image, mj-section, mj-column, mj-wrapper, mj-group, mj-divider, mj-spacer, mj-social",
             "items": {
               "properties": {
                 "type": {
@@ -1401,8 +1496,7 @@
                     "mj-group",
                     "mj-divider",
                     "mj-spacer",
-                    "mj-social",
-                    "mj-social-element"
+                    "mj-social"
                   ]
                 }
               }
@@ -1568,7 +1662,10 @@
             "items": {
               "properties": {
                 "type": {
-                  "enum": ["mj-head", "mj-body"]
+                  "enum": [
+                    "mj-head",
+                    "mj-body"
+                  ]
                 }
               }
             }
