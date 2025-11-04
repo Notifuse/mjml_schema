@@ -122,14 +122,17 @@ This document shows example patterns from the generated JSON Schema for validati
 
 ### 6. URL Validation
 
-**Pattern:** `^(https?:\/\/|data:|\{\{).*$`
+**Pattern:** `^[^<>]*$`
 
 **Validates:**
+
+This is a very permissive pattern that allows almost all URL formats while preventing HTML injection.
 
 **HTTP(S) URLs:**
 
 - ✓ `https://example.com/image.png`
 - ✓ `http://example.com/file.jpg`
+- ✓ `example.com/image.png` (relative domain)
 
 **Data URIs:**
 
@@ -139,17 +142,28 @@ This document shows example patterns from the generated JSON Schema for validati
 **Liquid Templates:**
 
 - ✓ `{{image_url}}`
-- ✓ `{{user.avatar}}`
+- ✓ `{%if user%}{{user.avatar}}{%endif%}`
 - ✓ `https://example.com/{{path}}`
 
-**Other:**
+**Relative & Protocol-Relative URLs:**
 
 - ✓ `//cdn.example.com/image.png` (protocol-relative)
-- ✗ `example.com/image.png` (missing protocol) - **Note: This will fail validation**
+- ✓ `/images/logo.png` (absolute path)
+- ✓ `./assets/image.png` (relative path)
+- ✓ `../parent/image.png` (parent directory)
+
+**Empty Strings:**
+
+- ✓ `` (empty string allowed)
+
+**Not Allowed (prevents HTML injection):**
+
+- ✗ `<script>alert('xss')</script>`
+- ✗ `<img src=x>`
 
 **Used by attributes:**
 
-- `href`, `src`, `background-url`
+- `href`, `src`, `srcset`, `background-url`
 - `icon-wrapped-url`, `icon-unwrapped-url`
 - Any attribute with "url", "href", or "src" in the name
 
@@ -279,7 +293,7 @@ if (!valid) {
 
 ```json
 {
-  "href": "example.com" // ❌ Should start with http://, https://, or {{
+  "href": "<script>alert('xss')</script>" // ❌ Contains < or > characters (HTML injection risk)
 }
 ```
 
@@ -288,7 +302,7 @@ if (!valid) {
 1. **Always include units** for dimensional attributes (px, %, em, rem)
 2. **Use standard color formats** (hex, rgb, rgba, hsl, hsla, or named colors)
 3. **Complete border definitions** must include width, style, and color
-4. **URLs should have protocols** (http://, https://) or use Liquid templating syntax
+4. **URLs are very permissive** - Full URLs, relative paths, data URIs, Liquid templates, and empty strings are all allowed. Only < and > characters are blocked for security.
 5. **Enum values are case-sensitive** - use lowercase for alignment, direction, etc.
 
 ## Custom Validation

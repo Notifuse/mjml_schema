@@ -73,14 +73,14 @@ function generatePattern(mjmlType, attrName) {
             if (hasMultiplicity) {
                 // For padding-like attributes that can have multiple values
                 // e.g., "10px", "10px 20px", "10px 20px 30px", "10px 20px 30px 40px"
-                const unitPattern = units.map(u => u.replace('%', '\\%')).join('|');
+                const unitPattern = units.join('|');
                 return `^\\d+(\\.\\d+)?(${unitPattern})(\\s+\\d+(\\.\\d+)?(${unitPattern}))*$`;
             }
 
             // Single value with specific units
             // If there are units, require them; if empty (unitless), make optional
             if (units.length > 0) {
-                const unitPattern = units.map(u => u.replace('%', '\\%')).join('|');
+                const unitPattern = units.join('|');
                 return `^\\d+(\\.\\d+)?(${unitPattern})$`;
             } else {
                 // Unitless number (e.g., line-height: 1.5)
@@ -100,9 +100,11 @@ function generatePattern(mjmlType, attrName) {
         return '^(\\d+(\\.\\d+)?(px|em|rem)\\s+(solid|dashed|dotted|double|groove|ridge|inset|outset|none|hidden)\\s+.+|none)$';
     }
 
-    // URL validation
+    // URL validation for href, src, srcset, background-url
     if (name.includes('url') || name.includes('href') || name.includes('src')) {
-        return '^(https?:\\/\\/|data:|\\{\\{).*$'; // Allow http(s), data URIs, and Liquid templating
+        // Very permissive: Allow full URLs, data URIs, Liquid templates ({{ or {%),
+        // relative paths, empty strings, etc. Just exclude dangerous characters for basic safety.
+        return '^[^<>]*$'; // Allow anything except < > (prevent HTML injection)
     }
 
     // Font family validation (allow multiple fonts separated by commas)

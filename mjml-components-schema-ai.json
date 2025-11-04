@@ -257,12 +257,12 @@
               },
               "height": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Height value (e.g., \"100px\", \"auto\"). Units: px, %."
               },
               "href": {
                 "type": "string",
-                "pattern": "^(https?:\\/\\/|data:|\\{\\{).*$",
+                "pattern": "^[^<>]*$",
                 "description": "Link URL. Supports Liquid templating (e.g., \"{{variable}}\")."
               },
               "name": {
@@ -280,28 +280,28 @@
               },
               "line-height": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Height value (e.g., \"100px\", \"auto\"). Units: px, %.",
                 "default": "120%"
               },
               "padding-bottom": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-left": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-right": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-top": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "rel": {
@@ -344,7 +344,7 @@
               },
               "width": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Width value (e.g., \"100px\", \"50%\", \"auto\"). Units: px, %."
               }
             }
@@ -384,7 +384,7 @@
               },
               "border-radius": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)(\\s+\\d+(\\.\\d+)?(px|\\%))*$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)(\\s+\\d+(\\.\\d+)?(px|%))*$",
                 "description": "Border radius (e.g., \"4px\", \"50%\"). Units: px, %."
               },
               "border-right": {
@@ -408,22 +408,22 @@
               },
               "padding-bottom": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-left": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-right": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-top": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "vertical-align": {
@@ -438,7 +438,7 @@
               },
               "width": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Width value (e.g., \"100px\", \"50%\", \"auto\"). Units: px, %."
               }
             }
@@ -505,27 +505,27 @@
               },
               "padding-bottom": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-left": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-right": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-top": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "width": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Width value (e.g., \"100px\", \"50%\", \"auto\"). Units: px, %.",
                 "default": "100%"
               },
@@ -584,7 +584,7 @@
               },
               "width": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Width value (e.g., \"100px\", \"50%\", \"auto\"). Units: px, %."
               }
             }
@@ -627,7 +627,7 @@
               },
               "href": {
                 "type": "string",
-                "pattern": "^(https?:\\/\\/|data:|\\{\\{).*$",
+                "pattern": "^[^<>]*$",
                 "description": "Link URL. Supports Liquid templating (e.g., \"{{variable}}\")."
               },
               "name": {
@@ -636,12 +636,12 @@
               },
               "src": {
                 "type": "string",
-                "pattern": "^(https?:\\/\\/|data:|\\{\\{).*$",
+                "pattern": "^[^<>]*$",
                 "description": "Image/resource URL. Supports Liquid templating."
               },
               "srcset": {
                 "type": "string",
-                "pattern": "^(https?:\\/\\/|data:|\\{\\{).*$",
+                "pattern": "^[^<>]*$",
                 "description": "srcset attribute"
               },
               "sizes": {
@@ -689,7 +689,7 @@
               },
               "border-radius": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)(\\s+\\d+(\\.\\d+)?(px|\\%))*$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)(\\s+\\d+(\\.\\d+)?(px|%))*$",
                 "description": "Border radius (e.g., \"4px\", \"50%\"). Units: px, %."
               },
               "container-background-color": {
@@ -707,22 +707,22 @@
               },
               "padding-bottom": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-left": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-right": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-top": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "target": {
@@ -743,7 +743,7 @@
               },
               "max-height": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Height value (e.g., \"100px\", \"auto\"). Units: px, %."
               },
               "font-size": {
@@ -810,7 +810,7 @@
               },
               "background-url": {
                 "type": "string",
-                "pattern": "^(https?:\\/\\/|data:|\\{\\{).*$",
+                "pattern": "^[^<>]*$",
                 "description": "Background image URL."
               },
               "background-repeat": {
@@ -885,22 +885,22 @@
               },
               "padding-top": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-bottom": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-left": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-right": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "text-align": {
@@ -915,7 +915,7 @@
               },
               "text-padding": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)(\\s+\\d+(\\.\\d+)?(px|\\%))*$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)(\\s+\\d+(\\.\\d+)?(px|%))*$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %.",
                 "default": "4px 4px 4px 0"
               }
@@ -966,7 +966,7 @@
               },
               "border-radius": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Border radius (e.g., \"4px\", \"50%\"). Units: px, %.",
                 "default": "3px"
               },
@@ -1003,23 +1003,23 @@
               },
               "icon-size": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "icon-size attribute Units: px, %.",
                 "default": "20px"
               },
               "icon-height": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Height value (e.g., \"100px\", \"auto\"). Units: px, %."
               },
               "icon-padding": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)(\\s+\\d+(\\.\\d+)?(px|\\%))*$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)(\\s+\\d+(\\.\\d+)?(px|%))*$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "line-height": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Height value (e.g., \"100px\", \"auto\"). Units: px, %.",
                 "default": "22px"
               },
@@ -1034,22 +1034,22 @@
               },
               "padding-bottom": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-left": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-right": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-top": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "table-layout": {
@@ -1062,7 +1062,7 @@
               },
               "text-padding": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)(\\s+\\d+(\\.\\d+)?(px|\\%))*$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)(\\s+\\d+(\\.\\d+)?(px|%))*$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "text-decoration": {
@@ -1126,27 +1126,27 @@
               },
               "padding-bottom": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-left": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-right": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-top": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "height": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Height value (e.g., \"100px\", \"auto\"). Units: px, %.",
                 "default": "20px"
               }
@@ -1219,7 +1219,7 @@
               },
               "height": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Height value (e.g., \"100px\", \"auto\"). Units: px, %."
               },
               "letter-spacing": {
@@ -1229,28 +1229,28 @@
               },
               "line-height": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Height value (e.g., \"100px\", \"auto\"). Units: px, %.",
                 "default": "1"
               },
               "padding-bottom": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-left": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-right": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-top": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "text-decoration": {
@@ -1297,7 +1297,7 @@
               },
               "background-url": {
                 "type": "string",
-                "pattern": "^(https?:\\/\\/|data:|\\{\\{).*$",
+                "pattern": "^[^<>]*$",
                 "description": "Background image URL."
               },
               "background-repeat": {
@@ -1372,22 +1372,22 @@
               },
               "padding-top": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-bottom": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-left": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "padding-right": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %."
               },
               "text-align": {
@@ -1402,7 +1402,7 @@
               },
               "text-padding": {
                 "type": "string",
-                "pattern": "^\\d+(\\.\\d+)?(px|\\%)(\\s+\\d+(\\.\\d+)?(px|\\%))*$",
+                "pattern": "^\\d+(\\.\\d+)?(px|%)(\\s+\\d+(\\.\\d+)?(px|%))*$",
                 "description": "Padding value. Supports 1-4 values (e.g., \"10px\", \"10px 20px\"). Units: px, %.",
                 "default": "4px 4px 4px 0"
               }
@@ -1551,7 +1551,7 @@
               },
               "href": {
                 "type": "string",
-                "pattern": "^(https?:\\/\\/|data:|\\{\\{).*$",
+                "pattern": "^[^<>]*$",
                 "description": "Link URL. Supports Liquid templating (e.g., \"{{variable}}\")."
               }
             }

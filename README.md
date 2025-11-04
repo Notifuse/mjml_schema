@@ -199,13 +199,18 @@ Examples: `1px solid #ccc`, `2px dashed red`, `none`
 
 ### URL Patterns
 
-`^(https?:\/\/|data:|\{\{).*$`
+`^[^<>]*$`
 
-Accepts:
+Very permissive pattern that accepts:
 
 - HTTP(S) URLs: `https://example.com/image.png`
+- Relative URLs: `/images/logo.png`, `./asset.png`, `example.com/file.jpg`
 - Data URIs: `data:image/png;base64,...`
-- Liquid templates: `{{variable}}`, `{{image_url}}`
+- Liquid templates: `{{variable}}`, `{%if x%}{{url}}{%endif%}`
+- Protocol-relative: `//cdn.example.com/image.png`
+- Empty strings: `` (allowed)
+
+Only blocks `<` and `>` characters to prevent HTML injection.
 
 ## Statistics
 
