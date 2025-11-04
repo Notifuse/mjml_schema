@@ -78,13 +78,25 @@ function generatePattern(mjmlType, attrName) {
             }
 
             // Single value with specific units
-            // If there are units, require them; if empty (unitless), make optional
+            // Handle special case: "auto" can stand alone, other units need numbers
+            // Also allow empty string with trailing |
             if (units.length > 0) {
-                const unitPattern = units.join('|');
-                return `^\\d+(\\.\\d+)?(${unitPattern})$`;
+                // If "auto" is one of the units, allow it standalone
+                if (units.includes('auto')) {
+                    const otherUnits = units.filter(u => u !== 'auto');
+                    if (otherUnits.length > 0) {
+                        const otherPattern = otherUnits.join('|');
+                        return `^(\\d+(\\.\\d+)?(${otherPattern})|auto|)$`;
+                    } else {
+                        return `^(auto|)$`;
+                    }
+                } else {
+                    const unitPattern = units.join('|');
+                    return `^(\\d+(\\.\\d+)?(${unitPattern})|)$`;
+                }
             } else {
                 // Unitless number (e.g., line-height: 1.5)
-                return `^\\d+(\\.\\d+)?$`;
+                return `^(\\d+(\\.\\d+)?|)$`;
             }
         }
     }
@@ -114,7 +126,7 @@ function generatePattern(mjmlType, attrName) {
 
     // Generic pixel/percentage validation if name suggests it
     if ((name.includes('width') || name.includes('height') || name.includes('size')) && !mjmlType.startsWith('unit(')) {
-        return '^(\\d+(\\.\\d+)?(px|%|em|rem|auto)|auto)$';
+        return '^(\\d+(\\.\\d+)?(px|%|em|rem|auto)|auto|)$'; // Allow empty string with trailing |
     }
 
     // Padding/margin/spacing validation
@@ -304,6 +316,62 @@ async function extractComponentSpecs() {
         }
     }
 
+    // Special handling for mj-social-element (sub-component of mj-social)
+    // It uses many of the same attributes as mj-social but is used as a child element
+    if (specs['mj-social']) {
+        const socialElementAttrs = {
+            'align': 'enum(left,center,right)',
+            'alt': 'string',
+            'background-color': 'color',
+            'border-radius': 'unit(px,%)',
+            'color': 'color',
+            'font-family': 'string',
+            'font-size': 'unit(px)',
+            'font-style': 'string',
+            'font-weight': 'string',
+            'href': 'string',
+            'icon-height': 'unit(px,%)',
+            'icon-padding': 'unit(px,%){1,4}',
+            'icon-size': 'unit(px,%)',
+            'line-height': 'unit(px,%)',
+            'name': 'string',
+            'padding': 'unit(px,%){1,4}',
+            'padding-top': 'unit(px,%)',
+            'padding-right': 'unit(px,%)',
+            'padding-bottom': 'unit(px,%)',
+            'padding-left': 'unit(px,%)',
+            'rel': 'string',
+            'sizes': 'string',
+            'src': 'string',
+            'srcset': 'string',
+            'target': 'string',
+            'text-decoration': 'string',
+            'text-padding': 'unit(px,%){1,4}',
+            'title': 'string',
+            'vertical-align': 'enum(top,bottom,middle)'
+        };
+
+        specs['mj-social-element'] = {
+            packageName: 'mjml-social',
+            allowedAttributes: socialElementAttrs,
+            defaultAttributes: {},
+            attributes: {}
+        };
+
+        // Generate attribute definitions for mj-social-element
+        for (const [attr, mjmlType] of Object.entries(socialElementAttrs)) {
+            const attrType = mjmlTypeToJsonSchema(mjmlType, attr, undefined);
+            const description = generateAttributeDescription(attr, undefined, mjmlType);
+
+            specs['mj-social-element'].attributes[attr] = {
+                ...attrType,
+                description
+            };
+        }
+
+        console.log(`  ✓ mj-social-element: ${Object.keys(socialElementAttrs).length} attributes (manually added)`);
+    }
+
     return specs;
 }
 
@@ -450,7 +518,8 @@ function generateAISchema(specs) {
         'mj-section': ['mj-column', 'mj-group', 'mj-raw'],
         'mj-group': ['mj-column'],
         'mj-column': ['mj-text', 'mj-button', 'mj-image', 'mj-divider', 'mj-spacer', 'mj-social', 'mj-raw'],
-        'mj-attributes': ['mj-text', 'mj-button', 'mj-image', 'mj-section', 'mj-column', 'mj-wrapper', 'mj-group', 'mj-divider', 'mj-spacer', 'mj-social']
+        'mj-social': ['mj-social-element'],
+        'mj-attributes': ['mj-text', 'mj-button', 'mj-image', 'mj-section', 'mj-column', 'mj-wrapper', 'mj-group', 'mj-divider', 'mj-spacer', 'mj-social', 'mj-social-element']
     };
 
     const basicExample = {
